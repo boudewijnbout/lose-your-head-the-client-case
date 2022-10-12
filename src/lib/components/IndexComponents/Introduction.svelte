@@ -1,6 +1,15 @@
+<script>
+	import { cursor } from "$lib/stores/cursor";
+</script>
+
 <section>
 	<div>
-		<h3>Midterm</h3>
+		<h3
+			on:mouseenter={() => cursor.set({ scale: "1.5" })}
+			on:mouseleave={() => cursor.set({ scale: "1" })}
+		>
+			Midterm
+		</h3>
 		<p>
 			De midterm review 2022 willen we graag inzetten om feedback te krijgen op
 			ons onderwijs en met het panel te kijken naar de toekomst van het
