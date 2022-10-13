@@ -1,10 +1,13 @@
 <script>
 	export let heroTitle;
+	import { cursor } from "$lib/stores/cursor";
 </script>
 
 <section>
 	<div>
-		<h2>{heroTitle}</h2>
+		<h2>
+			{heroTitle}
+		</h2>
 	</div>
 </section>
 
