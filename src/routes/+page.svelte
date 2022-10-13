@@ -17,13 +17,16 @@
 	<StandardSection>
 		{#each data.standards as standard}
 			<Standard
-				standardTitle={`${standard?.standardnumber}.0 ${standard.title} `}
+				standardUID={`/${standard.title}`}
+				standardTitle={`${standard?.standardnumber}.0 ${standard.title}`}
 			>
 				{#each standard.chapters as chapter, i}
 					<StandardChapter>
 						chapterTitle={`${standard.standardnumber}.${i + 1} ${
-							chapter.title
+							chapter.data.title
 						}`}
+						chapterUID={`${chapter.uid}`}
+						standardUID={`${standard.uid}`}
 					</StandardChapter>
 				{/each}
 			</Standard>
