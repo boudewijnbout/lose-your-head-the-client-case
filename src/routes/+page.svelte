@@ -1,9 +1,9 @@
 <script>
 	import Hero from "$lib/components/IndexComponents/Hero.svelte";
 	import Introduction from "$lib/components/IndexComponents/Introduction.svelte";
-	import Standard from "../lib/components/IndexComponents/Standard.svelte";
-	import StandardChapter from "../lib/components/IndexComponents/StandardChapter.svelte";
-	import StandardSection from "../lib/components/IndexComponents/StandardSection.svelte";
+	import Standard from "$lib/components/IndexComponents/Standard.svelte";
+	import StandardChapter from "$lib/components/IndexComponents/StandardChapter.svelte";
+	import StandardSection from "$lib/components/IndexComponents/StandardSection.svelte";
 
 	export let data;
 </script>
@@ -33,4 +33,3 @@
 		{/each}
 	</StandardSection>
 </main>
-
