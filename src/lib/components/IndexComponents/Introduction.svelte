@@ -1,4 +1,5 @@
 <script>
+	import { cursor } from "$lib/stores/cursor";
 	import * as helpers from "@prismicio/helpers";
 
 	export let introductionTitle;
@@ -6,9 +7,11 @@
 </script>
 
 <section>
-	<div>
-		<h3>{introductionTitle}</h3>
-		{@html helpers.asHTML(introduction)}
+	<div>   
+		<h3 
+      on:mouseenter={() => cursor.set({ scale: "1.5" })}
+			on:mouseleave={() => cursor.set({ scale: "1" })}>{introductionTitle}</h3>
+		  {@html helpers.asHTML(introduction)}
 	</div>
 	<figure>
 		<img src="images/cmd-laptop.png" alt="Laptop" />
