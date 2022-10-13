@@ -33,7 +33,6 @@
 		width: 50px;
 		height: 50px;
 		position: fixed;
-		display: none;
 		transition: cubic-bezier(0.17, 0.67, 0.83, 0.67);
 		transition-duration: 200ms;
 		transition-timing-function: ease-out;
@@ -42,5 +41,12 @@
 		left: -50px;
 		top: 0;
 		z-index: 999;
+		visibility: hidden;
+	}
+
+	@media (min-width: 60rem) {
+		div {
+			visibility: visible;
+		}
 	}
 </style>
