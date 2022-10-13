@@ -37,5 +37,3 @@
 		{/each}
 	</StandardSection>
 </main>
-
-<Footer />
