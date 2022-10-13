@@ -14,6 +14,7 @@
 		if (cursor) {
 			cursor.style.backgroundColor = $cursorStore.color;
 			cursor.style.transform = `scale(${$cursorStore.scale})`;
+			cursor.style.border = $cursorStore.border;
 		}
 	}
 
@@ -40,5 +41,6 @@
 		pointer-events: none;
 		left: -50px;
 		top: 0;
+		z-index: 999;
 	}
 </style>

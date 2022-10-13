@@ -1,4 +1,6 @@
 <script>
+	import { cursor } from "$lib/stores/cursor";
+
 	let isActive = false;
 
 	function toggleNavMenu() {
@@ -14,23 +16,87 @@
 	}
 </script>
 
-<nav class:active={isActive}>
+<nav
+	on:mouseenter={() =>
+		cursor.set({
+			scale: "1",
+			color: "rgba(0, 0, 0, 0.15)",
+			border: "none",
+		})}
+	on:mouseleave={() =>
+		cursor.set({
+			scale: "1",
+			color: "rgba(255, 240, 33, 0.5)",
+			border: "none",
+		})}
+	class:active={isActive}
+>
 	<a
 		href="/beoogde-leerresultaten"
 		data-sveltekit-prefetch
+		on:mouseenter={() =>
+			cursor.set({
+				scale: "1.5",
+				color: "rgba(0, 0, 0, 0.15)",
+				border: "2px dashed #000",
+			})}
+		on:mouseleave={() =>
+			cursor.set({
+				scale: "1",
+				color: "rgba(0,0,0,0.15)",
+				border: "none",
+			})}
 		on:click={closeNavMenu}>Beoogde leerresultaten</a
 	>
 	<a
 		href="/onderwijsleeromgeving"
 		data-sveltekit-prefetch
+		on:mouseenter={() =>
+			cursor.set({
+				scale: "1.5",
+				color: "rgba(0, 0, 0, 0.15)",
+				border: "2px dashed #000",
+			})}
+		on:mouseleave={() =>
+			cursor.set({
+				scale: "1",
+				color: "rgba(0,0,0,0.15)",
+				border: "none",
+			})}
 		on:click={closeNavMenu}>Onderwijsleeromgeving</a
 	>
-	<a href="/toetsing" data-sveltekit-prefetch on:click={closeNavMenu}
-		>Toetsing</a
+	<a
+		href="/toetsing"
+		data-sveltekit-prefetch
+		on:mouseenter={() =>
+			cursor.set({
+				scale: "1.5",
+				color: "rgba(0, 0, 0, 0.15)",
+				border: "2px dashed #000",
+			})}
+		on:mouseleave={() =>
+			cursor.set({
+				scale: "1",
+				color: "rgba(0,0,0,0.15)",
+				border: "none",
+			})}
+		on:click={closeNavMenu}>Toetsing</a
 	>
 	<a
 		href="/gerealiseerde-leerresultaten"
 		data-sveltekit-prefetch
+		on:mouseenter={() =>
+			cursor.set({
+				scale: "1.5",
+				color: "rgba(0, 0, 0, 0.15)",
+				border: "2px dashed #000",
+			})}
+		on:mouseleave={() =>
+			cursor.set({
+				scale: "1",
+				color: "rgba(0,0,0,0.15)",
+				border: "none",
+			})}
 		on:click={closeNavMenu}>Gerealiseerde leerresultaten</a
 	>
 </nav>

@@ -5,10 +5,7 @@
 
 <section>
 	<div>
-		<h2
-			on:mouseenter={() => cursor.set({ color: "rgba(255,255,255, 0.5)" })}
-			on:mouseleave={() => cursor.set({ color: "rgba(255, 240, 33, 0.5)" })}
-		>
+		<h2>
 			{heroTitle}
 		</h2>
 	</div>

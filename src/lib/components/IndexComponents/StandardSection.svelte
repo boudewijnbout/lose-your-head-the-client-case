@@ -3,8 +3,17 @@
 </script>
 
 <section
-	on:mouseenter={() => cursor.set({ color: "rgba(0,0,0,0.5)" })}
-	on:mouseleave={() => cursor.set({ color: "rgba(255, 240, 33, 0.5" })}
+	on:mouseenter={() =>
+		cursor.set({
+			scale: "1",
+			color: "rgba(0, 0, 0, 0.15)",
+		})}
+	on:mouseleave={() =>
+		cursor.set({
+			scale: "1",
+			color: "rgba(255, 240, 33, 0.5)",
+			border: "none",
+		})}
 >
 	<slot />
 </section>
