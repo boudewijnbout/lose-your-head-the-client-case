@@ -4,20 +4,20 @@
 	import Standard from "$lib/components/IndexComponents/Standard.svelte";
 	import StandardChapter from "$lib/components/IndexComponents/StandardChapter.svelte";
 	import StandardSection from "$lib/components/IndexComponents/StandardSection.svelte";
-	import Cursor from "../lib/components/Cursor.svelte";
+	import Cursor from "$lib/components/Cursor.svelte";
 
 	export let data;
 </script>
 
 <main>
 	<Cursor />
-  <Hero heroTitle={data.page.title} />
+	<Hero heroTitle={data.page.title} />
 	<Introduction
 		introduction={data.page.introduction}
 		introductionTitle="Midterm"
 	/>
-		
-   <StandardSection>
+
+	<StandardSection>
 		{#each data.standards as standard}
 			<Standard
 				standardUID={`/${standard.title}`}
