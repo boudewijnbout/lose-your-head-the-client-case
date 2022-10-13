@@ -1,10 +1,27 @@
 <script>
 	import Navigation from "$lib/components/HeaderComponents/Navigation.svelte";
+	import { cursor } from "$lib/stores/cursor";
 </script>
 
 <header>
 	<a href="/" data-sveltekit-prefetch>
-		<h1 class="logo">CMD Midterm</h1>
+		<h1
+			on:mouseenter={() =>
+				cursor.set({
+					scale: "1.5",
+					color: "rgba(0, 0, 0, 0.15)",
+					border: "2px dashed #000",
+				})}
+			on:mouseleave={() =>
+				cursor.set({
+					scale: "1",
+					color: "rgba(255, 240, 33, 0.5)",
+					border: "none",
+				})}
+			class="logo"
+		>
+			CMD Midterm
+		</h1>
 	</a>
 	<Navigation />
 </header>
