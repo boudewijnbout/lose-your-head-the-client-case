@@ -4,6 +4,8 @@
 	export let chapterTitle;
 
 	import { cursor } from "$lib/stores/cursor";
+
+	const path = standardUID.toLowerCase().split(' ').join('-');
 </script>
 
 <li>
@@ -20,7 +22,7 @@
 				color: "rgba(0, 0, 0, 0.15)",
 				border: "none",
 			})}
-		href="{standardUID}#{chapterUID}">{chapterTitle}</a
+		href="{path}#{chapterUID}">{chapterTitle}</a
 	>
 </li>
 
