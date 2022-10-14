@@ -9,23 +9,28 @@
   <h2>{chapterTitle}</h2>
   <div class="content">
     <slot />
+    <hr class="new4" />
   </div>
 </section>
-Footer
 
 <style>
+  hr.new4 {
+    border: 1px solid rgb(0, 0, 0);
+  }
   section {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    background-color: white;
+    text-align: center;
   }
 
   section h2 {
     padding: 0.25rem;
     margin-bottom: 1rem;
     font-size: 1.3rem;
-    border: 2px solid var(--color-black);
+    /* border: 2px solid var(--color-black); */
   }
 
   section span {
@@ -34,6 +39,8 @@ Footer
     background-color: var(--color-cmd-yellow);
     padding: 0.25rem;
     margin-bottom: -2px;
+    position: sticky;
+    top: 0;
   }
 
   div {
