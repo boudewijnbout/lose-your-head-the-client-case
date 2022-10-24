@@ -20,6 +20,7 @@
     text-align: center;
     color: black;
     text-shadow: #fff021 0.1em 0em;
+    margin: 0.5em;
   }
 
   header {

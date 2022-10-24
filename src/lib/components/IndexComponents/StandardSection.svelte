@@ -1,4 +1,20 @@
-<section>
+<script>
+	import { cursor } from "$lib/stores/cursor";
+</script>
+
+<section
+	on:mouseenter={() =>
+		cursor.set({
+			scale: "1",
+			color: "rgba(0, 0, 0, 0.15)",
+		})}
+	on:mouseleave={() =>
+		cursor.set({
+			scale: "1",
+			color: "rgba(255, 240, 33, 0.5)",
+			border: "none",
+		})}
+>
 	<slot />
 </section>
 

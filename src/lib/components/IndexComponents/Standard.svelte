@@ -1,9 +1,26 @@
 <script>
+	export let standardUID;
 	export let standardTitle;
+
+	import { cursor } from "$lib/stores/cursor";
 </script>
 
 <section>
-	<a href="#">{standardTitle}</a>
+	<a
+		on:mouseenter={() =>
+			cursor.set({
+				scale: "1.35",
+				color: "rgba(0, 0, 0, 0.15)",
+				border: "2px dashed #000",
+			})}
+		on:mouseleave={() =>
+			cursor.set({
+				scale: "1",
+				color: "rgba(0, 0, 0, 0.15)",
+				border: "none",
+			})}
+		href={standardUID}>{standardTitle}</a
+	>
 	<ul><slot /></ul>
 </section>
 
@@ -14,6 +31,7 @@
 	}
 
 	a {
+		color: var(--color-black);
 		font-size: 1.3rem;
 		font-weight: 700;
 		padding-bottom: 0.5rem;

@@ -1,4 +1,5 @@
 <script>
+	import { cursor } from "$lib/stores/cursor";
 	import * as helpers from "@prismicio/helpers";
 
 	export let introductionTitle;
@@ -7,10 +8,21 @@
 
 <section>
 	<div>
-		<h3>{introductionTitle}</h3>
+		<h3>
+			{introductionTitle}
+		</h3>
 		{@html helpers.asHTML(introduction)}
 	</div>
-	<figure>
+	<figure
+		on:mouseenter={() =>
+			cursor.set({
+				color: "rgba(0, 0, 0, 0.5)",
+			})}
+		on:mouseleave={() =>
+			cursor.set({
+				color: "rgba(255, 240, 33, 0.5)",
+			})}
+	>
 		<img src="images/cmd-laptop.png" alt="Laptop" />
 	</figure>
 </section>

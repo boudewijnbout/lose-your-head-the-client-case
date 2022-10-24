@@ -1,33 +1,36 @@
 <script>
 	import Hero from "$lib/components/IndexComponents/Hero.svelte";
 	import Introduction from "$lib/components/IndexComponents/Introduction.svelte";
-	import Standard from "../lib/components/IndexComponents/Standard.svelte";
-	import StandardChapter from "../lib/components/IndexComponents/StandardChapter.svelte";
-	import StandardSection from "../lib/components/IndexComponents/StandardSection.svelte";
-	import Header from "$lib/components/Header.svelte";
+	import Standard from "$lib/components/IndexComponents/Standard.svelte";
+	import StandardChapter from "$lib/components/IndexComponents/StandardChapter.svelte";
+	import StandardSection from "$lib/components/IndexComponents/StandardSection.svelte";
+	import Cursor from "$lib/components/Cursor.svelte";
 
 	export let data;
 </script>
 
-<Header />
-
 <main>
+	<Cursor />
 	<Hero heroTitle={data.page.title} />
 	<Introduction
 		introduction={data.page.introduction}
 		introductionTitle="Midterm"
 	/>
+
 	<StandardSection>
 		{#each data.standards as standard}
 			<Standard
-				standardTitle={`${standard?.standardnumber}.0 ${standard.title} `}
+				standardUID={`/${standard.title}`}
+				standardTitle={`${standard?.standardnumber}.0 ${standard.title}`}
 			>
 				{#each standard.chapters as chapter, i}
-					<StandardChapter>
+					<StandardChapter
 						chapterTitle={`${standard.standardnumber}.${i + 1} ${
-							chapter.title
+							chapter.data.title
 						}`}
-					</StandardChapter>
+						chapterUID={`${chapter.uid}`}
+						standardUID={`${standard.title}`}
+					/>
 				{/each}
 			</Standard>
 		{/each}
