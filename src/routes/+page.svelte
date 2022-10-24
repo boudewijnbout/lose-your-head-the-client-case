@@ -5,7 +5,6 @@
 	import StandardChapter from "$lib/components/IndexComponents/StandardChapter.svelte";
 	import StandardSection from "$lib/components/IndexComponents/StandardSection.svelte";
 	import Cursor from "$lib/components/Cursor.svelte";
-	import Footer from "$lib/components/Footer.svelte";
 
 	export let data;
 </script>

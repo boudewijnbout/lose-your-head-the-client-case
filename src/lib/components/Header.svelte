@@ -1,3 +1,7 @@
+<script>
+  export let NavigationLink;
+</script>
+
 <h1 class="logo">CMD MIDTERM</h1>
 
 <header>
