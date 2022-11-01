@@ -1,5 +1,6 @@
 <script>
 	import { cursor } from "$lib/stores/cursor";
+	import { page } from "$app/stores";
 
 	let isActive = false;
 
@@ -46,6 +47,7 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
+		class:active={$page.url.pathname === "/beoogde-leerresultaten"}
 		on:click={closeNavMenu}>Beoogde leerresultaten</a
 	>
 	<a
@@ -63,6 +65,7 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
+		class:active={$page.url.pathname === "/onderwijsleeromgeving"}
 		on:click={closeNavMenu}>Onderwijsleeromgeving</a
 	>
 	<a
@@ -80,6 +83,7 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
+		class:active={$page.url.pathname === "/toetsing"}
 		on:click={closeNavMenu}>Toetsing</a
 	>
 	<a
@@ -97,6 +101,7 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
+		class:active={$page.url.pathname === "/gerealiseerde-leerresultaten"}
 		on:click={closeNavMenu}>Gerealiseerde leerresultaten</a
 	>
 </nav>
@@ -109,11 +114,20 @@
 <style>
 	nav {
 		display: none;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 1.5rem;
 	}
 
 	nav a {
 		position: relative;
-		color: var(--color-black);
+	}
+
+	nav a.active {
+		background: linear-gradient(45deg, transparent 5%, var(--color-black) 5%);
+		color: #fff;
+		padding: 0.35rem 0.35rem 0.35rem 0.5rem;
 	}
 
 	nav a::before {
@@ -200,22 +214,14 @@
 	@media (min-width: 60rem) {
 		nav {
 			display: flex;
-			flex-direction: row;
-			justify-content: space-evenly;
-			align-items: center;
-			gap: 1rem;
-			position: relative;
-			height: auto;
-			background-color: #fff021;
-			padding: 0.75rem 0.5rem;
-		}
-
-		button {
-			display: none;
 		}
 
 		nav a::before {
 			display: block;
+		}
+
+		button {
+			display: none;
 		}
 	}
 </style>

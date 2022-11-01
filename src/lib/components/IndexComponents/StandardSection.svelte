@@ -3,11 +3,6 @@
 </script>
 
 <section
-	on:mouseenter={() =>
-		cursor.set({
-			scale: "1",
-			color: "rgba(0, 0, 0, 0.15)",
-		})}
 	on:mouseleave={() =>
 		cursor.set({
 			scale: "1",
@@ -20,23 +15,29 @@
 
 <style>
 	section {
-		background-color: var(--color-cmd-yellow);
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		padding: 2rem 2rem;
+		padding: 1rem;
+		grid-gap: 1rem;
+		display: grid;
+		border-left: 3px solid var(--color-black);
+		border-right: 3px solid var(--color-black);
+		border-bottom: 3px solid var(--color-black);
 	}
 
-	@media (min-width: 40rem) {
+	@media (min-width: 50rem) {
 		section {
-			padding: 2rem 3rem;
+			grid-template-columns: 1fr 1fr;
 		}
 	}
 
-	@media (min-width: 45rem) {
+	@media (min-width: 60rem) {
 		section {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@media (min-width: 68.75rem) {
+		section {
+			padding: 2rem 5rem;
 		}
 	}
 </style>

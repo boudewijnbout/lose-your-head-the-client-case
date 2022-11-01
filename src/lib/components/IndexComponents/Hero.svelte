@@ -1,44 +1,67 @@
 <script>
 	export let heroTitle;
+
 	import { cursor } from "$lib/stores/cursor";
 </script>
 
-<section>
-	<div>
-		<h2>
-			{heroTitle}
-		</h2>
-	</div>
+<section
+	on:mouseenter={() =>
+		cursor.set({
+			color: "rgba(0, 0, 0, 0.15)",
+		})}
+	on:mouseleave={() =>
+		cursor.set({
+			color: "rgba(255, 240, 33, 0.5)",
+		})}
+>
+	<h2>
+		{heroTitle}
+	</h2>
+	<slot />
 </section>
 
 <style>
 	section {
-		background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-			url("images/hero-image.jpeg");
-		background-size: cover;
-		background-position: center;
-		height: 15rem;
-		color: var(--color-white);
+		background-color: var(--color-cmd-yellow);
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 2rem;
+		border-left: 3px solid var(--color-black);
+		border-right: 3px solid var(--color-black);
+		border-bottom: 3px solid var(--color-black);
 		padding: 1rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 	}
 
 	h2 {
-		max-width: 45rem;
-		text-align: center;
+		font-size: 2rem;
+	}
+
+	@media (min-width: 50rem) {
+		h2 {
+			width: 80%;
+		}
 	}
 
 	@media (min-width: 60rem) {
 		section {
-			height: 25rem;
-			padding: 0 3rem;
+			padding: 3rem 2rem;
 		}
 
 		h2 {
 			font-size: 3rem;
-			text-align: left;
+		}
+	}
+
+	@media (min-width: 81.25rem) {
+		section {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 5rem;
+			padding: 6rem 5rem;
+		}
+
+		h2 {
+			font-size: 3.5rem;
+			width: auto;
 		}
 	}
 </style>

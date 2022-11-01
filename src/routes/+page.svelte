@@ -11,11 +11,9 @@
 
 <main>
 	<Cursor />
-	<Hero heroTitle={data.page.title} />
-	<Introduction
-		introduction={data.page.introduction}
-		introductionTitle="Midterm"
-	/>
+	<Hero heroTitle={data.page.title}>
+		<Introduction introduction={data.page.introduction} />
+	</Hero>
 
 	<StandardSection>
 		{#each data.standards as standard}

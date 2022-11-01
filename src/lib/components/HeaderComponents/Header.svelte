@@ -27,45 +27,32 @@
 </header>
 
 <style>
-	h1 {
-		text-align: center;
-		color: black;
-		text-shadow: #fff021 0.1em 0em;
-	}
-
 	header {
-		text-align: center;
-		text-decoration: none;
-		color: black;
-		background-color: #fff021;
-		padding: 0.75em 1rem;
+		background-color: var(--color-white);
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-	}
-
-	a {
-		color: black;
+		padding: 1rem;
+		border: 3px solid var(--color-black);
 	}
 
 	h1 {
 		font-size: 1.5rem;
 	}
 
+	a {
+		color: var(--color-black);
+	}
+
 	@media (min-width: 60rem) {
 		header {
-			flex-direction: column;
-			padding: 0;
-			background-color: transparent;
+			padding: 1rem 2rem;
 		}
+	}
 
-		a {
-			padding: 1.5rem;
-			display: inline-block;
-		}
-
-		h1 {
-			font-size: 1.75rem;
+	@media (min-width: 81.25rem) {
+		header {
+			padding: 1rem 5rem;
 		}
 	}
 </style>

@@ -5,7 +5,7 @@
 
 	import { cursor } from "$lib/stores/cursor";
 
-	const path = standardUID.toLowerCase().split(' ').join('-');
+	const path = standardUID.toLowerCase().split(" ").join("-");
 </script>
 
 <li>
@@ -19,7 +19,7 @@
 		on:mouseleave={() =>
 			cursor.set({
 				scale: "1",
-				color: "rgba(0, 0, 0, 0.15)",
+				color: "rgba(255, 240, 33, 0.5)",
 				border: "none",
 			})}
 		href="{path}#{chapterUID}">{chapterTitle}</a
@@ -30,6 +30,5 @@
 	a {
 		padding: 0.5rem 0;
 		color: var(--color-black);
-		max-width: 20rem;
 	}
 </style>

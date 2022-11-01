@@ -16,7 +16,7 @@
 		on:mouseleave={() =>
 			cursor.set({
 				scale: "1",
-				color: "rgba(0, 0, 0, 0.15)",
+				color: "rgba(255, 240, 33, 0.5)",
 				border: "none",
 			})}
 		href={standardUID}>{standardTitle}</a
@@ -25,17 +25,12 @@
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
+	a {
+		font-size: 1.3rem;
+		font-weight: 600;
 	}
 
-	a {
-		color: var(--color-black);
-		font-size: 1.3rem;
-		font-weight: 700;
-		padding-bottom: 0.5rem;
-		margin-bottom: 0.5rem;
-		border-bottom: 3px solid var(--color-black);
+	ul {
+		margin-top: 1rem;
 	}
 </style>
