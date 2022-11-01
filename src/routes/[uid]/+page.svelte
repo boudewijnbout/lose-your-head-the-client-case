@@ -2,6 +2,7 @@
 	import ChapterSection from "$lib/components/DetailComponents/ChapterSection.svelte";
 	import ChapterContentLeft from "$lib/components/DetailComponents/ChapterContentLeft.svelte";
 	import ChapterContentRight from "$lib/components/DetailComponents/ChapterContentRight.svelte";
+	import StandardHero from "$lib/components/DetailComponents/StandardHero.svelte";
 	import Cursor from "$lib/components/Cursor.svelte";
 
 	export let data;
