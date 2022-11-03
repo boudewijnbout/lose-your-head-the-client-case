@@ -27,11 +27,21 @@
 		border-left: 3px solid var(--color-black);
 		border-right: 3px solid var(--color-black);
 		border-bottom: 3px solid var(--color-black);
-		display: grid;
-		grid-template-columns: 1fr;
-		/* grid-gap: 2rem; */
-		grid-gap: 1rem;
+		height: 15rem;
+		display: flex;
+		flex-direction: column;
 		padding: 1rem;
+		justify-content: center;
+	}
+
+	@media (min-width: 45rem) {
+		section {
+			height: 15rem;
+		}
+
+		h2 {
+			font-size: 2rem;
+		}
 	}
 
 	@media (min-width: 60rem) {
@@ -40,7 +50,13 @@
 		}
 
 		h2 {
-			font-size: 3rem;
+			font-size: 2.5rem;
+		}
+	}
+
+	@media (min-width: 60rem) {
+		section {
+			height: 10rem;
 		}
 	}
 
@@ -48,12 +64,14 @@
 		section {
 			padding: 3rem 2rem;
 			grid-template-columns: 1fr 1fr;
+			display: grid;
+			grid-gap: 1rem;
 		}
 	}
 	@media (min-width: 81rem) {
 		section {
 			padding: 6rem 5rem;
-			grid-gap: 0;
+			height: 10rem;
 		}
 		h2 {
 			font-size: 3rem;
