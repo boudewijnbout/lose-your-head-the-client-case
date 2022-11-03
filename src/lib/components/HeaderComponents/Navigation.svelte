@@ -2,8 +2,6 @@
 	import { cursor } from "$lib/stores/cursor";
 	import { page } from "$app/stores";
 
-	export let url;
-
 	let isActive = false;
 
 	export function toggleNavMenu() {
@@ -140,7 +138,7 @@
 		height: 100vh;
 		background-color: var(--color-cmd-yellow);
 		overflow: hidden;
-		z-index: 20;
+		z-index: 99;
 	}
 
 	nav.active a {
@@ -155,7 +153,6 @@
 	}
 
 	nav a.active {
-		/* background: linear-gradient(45deg, transparent 5%, var(--color-black) 5%); */
 		background-color: var(--color-black);
 		color: #fff;
 		padding: 0.35rem 0.35rem 0.35rem 0.5rem;
@@ -193,7 +190,7 @@
 		position: relative;
 		z-index: 1;
 		cursor: pointer;
-		z-index: 30;
+		z-index: 99;
 	}
 
 	button span {
