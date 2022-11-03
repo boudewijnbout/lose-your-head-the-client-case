@@ -1,66 +1,79 @@
 <script>
-  export let chapterTitle;
-  export let chapterNumber;
-  export let chapterUID;
+	export let chapterTitle;
+	export let chapterNumber;
+	export let chapterUID;
 </script>
 
-<section class="chapter" id={chapterUID}>
-  <span>{chapterNumber}</span>
-  <h2>{chapterTitle}</h2>
-  <div class="content">
-    <slot />
-    <hr class="new4" />
-  </div>
+<section id={chapterUID}>
+	<div>
+		<span>{chapterNumber}</span>
+		<h3>{chapterTitle}</h3>
+	</div>
+	<article class="content">
+		<slot />
+
+		<hr />
+	</article>
 </section>
 
 <style>
-  hr.new4 {
-    border: 1px solid rgb(0, 0, 0);
-  }
-  section {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    /* align-items: flex-start; */
-    background-color: white;
-    text-align: center;
-  }
+	section {
+		border-left: 3px solid var(--color-black);
+		border-right: 3px solid var(--color-black);
+		grid-template-columns: 0.3fr 1.1fr;
+		grid-template-areas: "spanArea articleArea";
+		padding: 1rem;
+	}
 
-  section h2 {
-    padding: 0.25rem;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    /* border: 2px solid var(--color-black); */
-  }
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
 
-  section span {
-    font-size: 1.3rem;
-    border: 2px solid var(--color-black);
-    background-color: var(--color-cmd-yellow);
-    padding: 0.25rem;
-    margin-bottom: -2px;
-    position: sticky;
-    top: 0;
-  }
+	span {
+		background-color: var(--color-cmd-yellow);
+		padding: 0.25rem;
+		font-size: 1.3rem;
+		display: inline-block;
+		margin-bottom: -2px;
+		border: 2px solid var(--color-black);
+	}
 
-  div {
-    grid-gap: 2rem;
-  }
+	h3 {
+		font-size: 1.3rem;
+		border: 2px solid var(--color-black);
+		padding: 0.25rem;
+		margin-bottom: 1rem;
+	}
 
-  @media (min-width: 45rem) {
-    section {
-      padding: 1rem 3rem;
-    }
-  }
+	.content {
+		grid-area: articleArea;
+	}
 
-  @media (min-width: 60rem) {
-    section {
-      padding: 2rem 5rem;
-    }
+	hr {
+		border-top: 1px solid #fafafa;
+	}
 
-    div {
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 2rem;
-    }
-  }
+	@media (min-width: 60rem) {
+		section {
+			padding: 3rem 2rem;
+		}
+	}
+
+	@media (min-width: 81.25rem) {
+		section {
+			padding: 2rem 5rem;
+			display: grid;
+			grid-gap: 3rem;
+		}
+
+		div {
+			position: sticky;
+			align-self: start;
+			justify-self: start;
+			grid-area: spanArea;
+			top: 1rem;
+		}
+	}
 </style>

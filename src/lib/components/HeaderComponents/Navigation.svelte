@@ -2,16 +2,19 @@
 	import { cursor } from "$lib/stores/cursor";
 	import { page } from "$app/stores";
 
+	export let url;
+
 	let isActive = false;
 
-	function toggleNavMenu() {
+	export function toggleNavMenu() {
 		isActive = !isActive;
 
 		isActive
 			? document.body.classList.add("freeze")
 			: document.body.classList.remove("freeze");
 	}
-	function closeNavMenu() {
+
+	export function closeNavMenu() {
 		isActive = false;
 		document.body.classList.remove("freeze");
 	}
@@ -47,8 +50,9 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
+		on:click={closeNavMenu}
 		class:active={$page.url.pathname === "/beoogde-leerresultaten"}
-		on:click={closeNavMenu}>Beoogde leerresultaten</a
+		>Beoogde leerresultaten</a
 	>
 	<a
 		href="/onderwijsleeromgeving"
@@ -65,8 +69,9 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
+		on:click={closeNavMenu}
 		class:active={$page.url.pathname === "/onderwijsleeromgeving"}
-		on:click={closeNavMenu}>Onderwijsleeromgeving</a
+		>Onderwijsleeromgeving</a
 	>
 	<a
 		href="/toetsing"
@@ -83,8 +88,8 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
-		class:active={$page.url.pathname === "/toetsing"}
-		on:click={closeNavMenu}>Toetsing</a
+		on:click={closeNavMenu}
+		class:active={$page.url.pathname === "/toetsing"}>Toetsing</a
 	>
 	<a
 		href="/gerealiseerde-leerresultaten"
@@ -101,8 +106,9 @@
 				color: "rgba(0,0,0,0.15)",
 				border: "none",
 			})}
+		on:click={closeNavMenu}
 		class:active={$page.url.pathname === "/gerealiseerde-leerresultaten"}
-		on:click={closeNavMenu}>Gerealiseerde leerresultaten</a
+		>Gerealiseerde leerresultaten</a
 	>
 </nav>
 <button on:click={toggleNavMenu} class:active={isActive}>
@@ -118,35 +124,6 @@
 		justify-content: center;
 		align-items: center;
 		gap: 1.5rem;
-	}
-
-	nav a {
-		position: relative;
-	}
-
-	nav a.active {
-		background: linear-gradient(45deg, transparent 5%, var(--color-black) 5%);
-		color: #fff;
-		padding: 0.35rem 0.35rem 0.35rem 0.5rem;
-	}
-
-	nav a::before {
-		content: "";
-		position: absolute;
-		bottom: -0.3rem;
-		right: 0;
-		width: 0;
-		height: 2px;
-		background-color: var(--color-black);
-		transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
-		display: none;
-		z-index: 30;
-	}
-
-	nav a:hover::before {
-		left: 0;
-		right: auto;
-		width: 100%;
 	}
 
 	nav.active {
@@ -171,6 +148,43 @@
 		filter: brightness(85%);
 		width: 85%;
 		padding: 0.5rem;
+	}
+
+	a {
+		position: relative;
+	}
+
+	nav a.active {
+		/* background: linear-gradient(45deg, transparent 5%, var(--color-black) 5%); */
+		background-color: var(--color-black);
+		color: #fff;
+		padding: 0.35rem 0.35rem 0.35rem 0.5rem;
+	}
+
+	a.active::before {
+		display: none;
+	}
+
+	a::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		left: 50%;
+		z-index: -1;
+		background-color: var(--color-cmd-yellow);
+		border: 1px solid var(--color-black);
+		transition: all 250ms;
+		display: none;
+	}
+
+	a:hover::before {
+		right: auto;
+		top: -0.6rem;
+		z-index: 1;
 	}
 
 	button {
@@ -216,7 +230,11 @@
 			display: flex;
 		}
 
-		nav a::before {
+		nav a.active {
+			background: linear-gradient(45deg, transparent 5%, var(--color-black) 5%);
+		}
+
+		a::before {
 			display: block;
 		}
 

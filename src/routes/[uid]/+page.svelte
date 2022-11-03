@@ -4,6 +4,8 @@
 	import ChapterContentRight from "$lib/components/DetailComponents/ChapterContentRight.svelte";
 	import StandardHero from "$lib/components/DetailComponents/StandardHero.svelte";
 	import Cursor from "$lib/components/Cursor.svelte";
+	import StandardNavigation from "$lib/components/DetailComponents/StandardNavigation.svelte";
+	import StandardNavigationLink from "../../lib/components/DetailComponents/StandardNavigationLink.svelte";
 
 	export let data;
 </script>
@@ -27,4 +29,15 @@
 			<ChapterContentRight contentRight={chapter.data.contentright} />
 		</ChapterSection>
 	{/each}
+	<StandardNavigation
+		navigationLink={data.standard.uid}
+		standardHeaderTitle={data.standard.data.title}
+	>
+		{#each data.standard.data.chapters as chapter}
+			<StandardNavigationLink
+				chapterLink={`${data.standard.uid}/#${chapter.uid}`}
+				chapter={chapter.data.title}
+			/>
+		{/each}
+	</StandardNavigation>
 </main>

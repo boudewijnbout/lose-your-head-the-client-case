@@ -27,6 +27,10 @@
 </li>
 
 <style>
+	li {
+		list-style-type: none;
+	}
+
 	a {
 		padding: 0.5rem 0;
 		color: var(--color-black);

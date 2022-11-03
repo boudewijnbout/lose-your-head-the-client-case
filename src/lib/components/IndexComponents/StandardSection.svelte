@@ -20,7 +20,6 @@
 		display: grid;
 		border-left: 3px solid var(--color-black);
 		border-right: 3px solid var(--color-black);
-		border-bottom: 3px solid var(--color-black);
 	}
 
 	@media (min-width: 50rem) {

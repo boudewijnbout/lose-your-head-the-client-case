@@ -4,9 +4,7 @@
 
 <style>
 	footer {
-		border-left: 3px solid var(--color-black);
-		border-right: 3px solid var(--color-black);
-		border-bottom: 3px solid var(--color-black);
+		border: 3px solid var(--color-black);
 		text-align: right;
 		padding: 1rem;
 	}

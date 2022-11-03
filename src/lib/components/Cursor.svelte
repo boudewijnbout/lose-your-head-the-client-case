@@ -44,7 +44,7 @@
 		visibility: hidden;
 	}
 
-	@media (min-width: 60rem) {
+	@media (min-width: 68.75rem) {
 		div {
 			visibility: visible;
 		}
