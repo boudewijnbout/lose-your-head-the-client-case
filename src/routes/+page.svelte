@@ -5,12 +5,11 @@
 	import StandardChapter from "$lib/components/IndexComponents/StandardChapter.svelte";
 	import StandardSection from "$lib/components/IndexComponents/StandardSection.svelte";
 	import Cursor from "$lib/components/Cursor.svelte";
-	import {handleOnScroll} from "$lib/components/BackToTop.svelte";
 
 	export let data;
 </script>
 
-<main on:scroll={handleOnScroll}>
+<main>
 	<Cursor />
 	<Hero heroTitle={data.page.title}>
 		<Introduction introduction={data.page.introduction} />

@@ -22,8 +22,6 @@
             hidden = true;
         }
     }
-
-    export {handleOnScroll};
 </script>
 
 <svelte:window on:scroll={handleOnScroll} />
